@@ -1,0 +1,15 @@
+/* pages/interests.wxss */
+.placeholder{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #EBEBEB;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #6b6b6b;
+}
+
+.activeItem {
+  background: #df7373;
+  color: #fff;
+}

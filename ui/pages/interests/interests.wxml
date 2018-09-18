@@ -1,0 +1,35 @@
+<!--pages/interests.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">个人喜好</view>
+    <view class="page__desc">请挑选喜好</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <!-- <view wx:for = "{{textFields}}">
+      <text>{{item.value}}</text>
+    </view> -->
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder activeItem">麻辣</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder">咸鲜</view></view>
+        <view class="weui-flex__item"><view class="placeholder">酸辣</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder activeItem">蒜香</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder">甜酸</view></view>
+        <view class="weui-flex__item"><view class="placeholder">葱香</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder">咖喱</view></view>
+        <view class="weui-flex__item"><view class="placeholder">咸甜</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder">鱼香</view></view>
+        <view class="weui-flex__item"><view class="placeholder">其他</view></view>
+    </view>
+    <button class="weui-btn lh__btn" type="primary" bindtap="toNextPage">Next</button>
+  </view>
+</view>
