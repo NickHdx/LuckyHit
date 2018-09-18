@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.luckyhit.mapper.OrderInfoMapper" >
+    <sql id="BaseColumnList" >
+        id, first_user_id, second_user_id, restaurant_id, dining_begin_time, dining_end_time, last_update_time
+    </sql>
+    <select id="selectByPrimaryKey" resultType="com.luckyhit.domain.OrderInfo" parameterType="java.lang.Integer" >
+        select
+        <include refid="BaseColumnList" />
+        from order_info
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectList" resultType="com.luckyhit.domain.OrderInfo">
+        select
+        <include refid="BaseColumnList" />
+        from order_info
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from order_info
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.luckyhit.domain.OrderInfo">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            SELECT currval('order_info_id_seq')
+        </selectKey>
+        insert into order_info(first_user_id, second_user_id, restaurant_id, dining_begin_time, dining_end_time, last_update_time)
+        values (#{firstUserId,jdbcType=VARCHAR}, #{secondUserId,jdbcType=VARCHAR},
+        #{restaurantId,jdbcType=INTEGER}, #{diningBeginTime,jdbcType=TIMESTAMP},
+        #{diningEndTime,jdbcType=TIMESTAMP}, #{lastUpdateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.luckyhit.domain.OrderInfo" >
+        update order_info set
+        first_user_id = #{firstUserId,jdbcType=VARCHAR},
+        second_user_id = #{secondUserId,jdbcType=VARCHAR},
+        restaurant_id = #{restaurantId,jdbcType=INTEGER},
+        dining_begin_time = #{diningBeginTime,jdbcType=TIMESTAMP},
+        dining_end_time = #{diningEndTime,jdbcType=TIMESTAMP},
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

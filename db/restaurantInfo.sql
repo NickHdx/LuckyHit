@@ -5,7 +5,7 @@ IF EXISTS (SELECT * FROM pg_class WHERE relname = 'restaurant_info' AND relkind 
 END IF;
 
 CREATE TABLE restaurant_info (
-  id VARCHAR NOT NULL,
+  id SERIAL,
   name VARCHAR(256) NOT NULL,
   address VARCHAR NOT NULL,
   flavor_list VARCHAR NOT NULL,
