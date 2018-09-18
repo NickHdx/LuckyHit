@@ -9,8 +9,7 @@ CREATE TABLE restaurant_info (
   name VARCHAR(256) NOT NULL,
   address VARCHAR NOT NULL,
   flavor_list VARCHAR NOT NULL,
-  small_image VARCHAR NULL,
-  big_image VARCHAR NULL,
+  image VARCHAR NULL,
   last_update_time timestamp without time zone NOT NULL,
   CONSTRAINT restaurant_info_pkey PRIMARY KEY (id));
 
