@@ -7,7 +7,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    orderCondition: false
   },
   
   refreshMatching: function() {

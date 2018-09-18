@@ -3,3 +3,22 @@
 .lh__btn {
   background: #df7373 !important;
 }
+
+.matching-info__left {
+  margin-right: 0;
+  padding-left: 15px;
+}
+
+.matching-info__right {
+  margin-right: 0;
+  padding-right: 15px;
+}
+
+.matching-line {
+  margin-right: 0;
+  text-align: center;
+}
+
+.lh-page_bd {
+  padding-bottom: 20px;
+}

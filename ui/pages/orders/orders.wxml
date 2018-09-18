@@ -1,10 +1,10 @@
 <!--pages/orders/orders.wxml-->
 <view class="page">
   <view class="page__hd">
-      <view class="page__title">匹配成功！</view>
-      <view class="page__desc">恭喜您！</view>
+      <view class="page__title" wx:if="{{orderCondition}}">匹配生效中！</view>
+      <view class="page__title" wx:else>匹配成功！</view>
   </view>
-  <view class="page__bd">
+  <view class="page__bd lh-page_bd">
       <view class="weui-panel weui-panel_access">
           <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
               <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
@@ -18,16 +18,25 @@
           <view class="weui-media-box__info__meta" style="padding-left:.8em;padding-bottom:15px;margin-left:75px;">12:00 - 12:30</view>
       </view>
   </view>
-  <view class="page__bd page__bd_spacing">
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-flex">
-          <view class="weui-flex__item"><image class="weui-media-box__thumb" src="{{icon60}}" /></view>
-          <view class="weui-flex__item"><text>......</text></view>
-          <view class="weui-flex__item"><image class="weui-media-box__thumb" src="{{icon60}}" /></view>
+  <view class="page__bd lh-page_bd">
+      <view class="weui-panel weui-panel_access">
+          <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg matching-info__left">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg matching-line">
+                  ••••••••••••••
+              </view>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg matching-info__right">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+              </view>
+          </navigator>
       </view>
-    </view>
   </view>
-  <view class="page__bd page__bd_spacing">
+  <view class="page__bd page__bd_spacing" wx:if="{{orderCondition}}">
+    <button class="weui-btn" type="primary" bindtap="confirmMatching">Completed</button>
+  </view>
+  <view class="page__bd page__bd_spacing" wx:else>
     <button class="weui-btn lh__btn" type="primary" bindtap="refreshMatching">Change</button>
     <button class="weui-btn" type="primary" bindtap="confirmMatching">Confirm</button>
   </view>
