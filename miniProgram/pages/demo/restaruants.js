@@ -1,0 +1,131 @@
+var restaruants = [{
+    id:"1",
+    name:"炸鸡汉堡",
+    flavor:['fast food'],
+    address:'A___B____C____',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},
+{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+},{
+    id:"1",
+    name:"",
+    flavor:[],
+    address:'',
+    src:'',
+    thumbnail:''
+}];
+
+module.exports = {
+    data: restaruants
+}

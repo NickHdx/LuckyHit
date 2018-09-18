@@ -1,0 +1,8 @@
+<template name="restaruant-list">
+<block wx:for="{{restaruants}}" wx:for-index="idx" wx:for-item="res"></block>
+<view class="restaruant-item">
+<image class="restaruant" src="{{ res.images.small }}"/>
+<view class="restaruant-info">
+<text class="title">{{res.title}}</text><text class="flavor">{{res.flavor}}</text><text class="address">{{res.address}}</text></view>
+</view>
+</template>

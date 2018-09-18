@@ -1,0 +1,5 @@
+<view>
+<text class="header">Pick你心中的美味</text>
+<import src="../common/restaruant"/>
+<button catchtap="refreshRestaruants">不满意？点这里换一换</button>
+</view>
