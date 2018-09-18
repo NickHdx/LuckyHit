@@ -1,21 +1,11 @@
-// pages/interests.js
-const app = getApp()
-
+// pages/orders/orders.js
 Page({
+
+  /**
+   * Page initial data
+   */
   data: {
-    textFields: /* app.globalData.userInfo.interests */[
-      { name: 'mala', value: '麻辣'},
-      { name: 'xianxiang', value: '咸鲜'},
-      { name: 'suanla', value: '酸辣'},
-      { name: 'suanxiang', value: '蒜香'},
-      { name: 'tiansuan', value: '甜酸'},
-      { name: 'congxiang', value: '葱香'},
-      { name: 'curry', value: '咖喱'},
-      { name: 'xiantian', value: '咸甜'},
-      { name: 'yuxiang', value: '鱼香' },
-      { name: 'luxiang', value: '卤香' }
-    ],
-    hidden: false
+
   },
 
   /**

@@ -6,29 +6,32 @@
   </view>
   <view class="page__bd page__bd_spacing">
     <!-- <view wx:for = "{{textFields}}">
-      <text>{{item.value}}</text>
+      <view class="weui-flex">
+          <view class="weui-flex__item"><view class="placeholder activeItem">{{item.index}}</view></view>
+          
+      </view>
     </view> -->
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder activeItem">麻辣</view></view>
+        <view class="weui-flex__item"><view class="placeholder activeItem">{{textFields[0].value}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">咸鲜</view></view>
-        <view class="weui-flex__item"><view class="placeholder">酸辣</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[1].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[2].value}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder activeItem">蒜香</view></view>
+        <view class="weui-flex__item"><view class="placeholder activeItem">{{textFields[3].value}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">甜酸</view></view>
-        <view class="weui-flex__item"><view class="placeholder">葱香</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[4].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[5].value}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">咖喱</view></view>
-        <view class="weui-flex__item"><view class="placeholder">咸甜</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[6].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[7].value}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">鱼香</view></view>
-        <view class="weui-flex__item"><view class="placeholder">其他</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[8].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder">{{textFields[9].value}}</view></view>
     </view>
     <button class="weui-btn lh__btn" type="primary" bindtap="toNextPage">Next</button>
   </view>

@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/interests/interests"
+    "pages/interests/interests",
+    "pages/restaurants/restaurants",
+    "pages/orders/orders"
   ],
   "window": {
     "backgroundTextStyle": "light",

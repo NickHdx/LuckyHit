@@ -1,4 +1,4 @@
-// pages/interests.js
+// pages/restaurants/restaurants.js
 Page({
 
   /**

@@ -9,7 +9,7 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId  
       }
     })
     // 获取用户信息
@@ -21,6 +21,35 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              /* wx.request({
+                url: '/',
+                data: {
+                  code: res.code,
+                  nickName: this.globalData.userInfo
+                },
+                method: 'GET',
+                header: {
+                  'content-type': 'application/json'
+                },
+                success: function (response) {
+                  this.globalData.userInfo = response.data.userInfo
+                },
+                fail: function (error) {
+                  this.globalData.userInfo.userId = '20180918001'
+                  this.globalData.userInfo.interests = [
+                    { name: 'mala', value: '麻辣'},
+                    { name: 'xianxiang', value: '咸鲜'},
+                    { name: 'suanla', value: '酸辣'},
+                    { name: 'suanxiang', value: '蒜香'},
+                    { name: 'tiansuan', value: '甜酸'},
+                    { name: 'congxiang', value: '葱香'},
+                    { name: 'curry', value: '咖喱'},
+                    { name: 'xiantian', value: '咸甜'},
+                    { name: 'yuxiang', value: '鱼香'},
+                    { name: 'others', value: '其他'}
+                  ]
+                }
+              }) */
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
