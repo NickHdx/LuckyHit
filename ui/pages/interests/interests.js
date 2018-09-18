@@ -14,10 +14,14 @@ Page({
       { name: 'xiantian', value: '咸甜'},
       { name: 'yuxiang', value: '鱼香' },
       { name: 'luxiang', value: '卤香' }
-    ],
-    hidden: false
+    ]
   },
-
+  //事件处理函数
+  toNextPage: function() {
+    wx.navigateTo({
+      url: '../orders/orders'
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */

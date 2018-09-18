@@ -1,4 +1,6 @@
 // pages/orders/orders.js
+var base64 = require("../../static/images/base64");
+
 Page({
 
   /**
@@ -7,12 +9,22 @@ Page({
   data: {
 
   },
+  
+  refreshMatching: function() {
+
+  },
+  confirmMatching: function() {
+
+  },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.setData({
+      icon20: base64.icon20,
+      icon60: base64.icon60
+    });
   },
 
   /**

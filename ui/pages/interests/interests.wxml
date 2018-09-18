@@ -33,6 +33,6 @@
         <view class="weui-flex__item"><view class="placeholder">{{textFields[8].value}}</view></view>
         <view class="weui-flex__item"><view class="placeholder">{{textFields[9].value}}</view></view>
     </view>
-    <button class="weui-btn lh__btn" type="primary" bindtap="toNextPage">Next</button>
+    <button class="weui-btn" type="primary" bindtap="toNextPage">Next</button>
   </view>
 </view>
