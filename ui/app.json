@@ -4,12 +4,13 @@
     "pages/logs/logs",
     "pages/interests/interests",
     "pages/restaurants/restaurants",
-    "pages/orders/orders"
+    "pages/orders/orders",
+    "pages/restaruant-list/restaruant-list"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "凑巧",
+    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   }
 }

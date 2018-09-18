@@ -1,0 +1,18 @@
+<view wx:if="{{!loading}}" class="page">
+ <view class="page__hd">
+    <view class="page__title">Pick你心中的美味</view>
+</view>
+<import src="../common/restaruant"/>
+<block wx:for="{{currentRestaruants}}" wx:for-index="idx" wx:for-item="res">
+<view bindtap="chooseRestaruant" class="{{res.checked ? 'is_checked':'lh-restaruant-item'}}" data-index="{{idx}}" data-id="{{res.id}}">
+<picker mode="multiSelector" disabled="{{chooseTime}}" bindchange="bindTimeZonePickerChange" bindcolumnchange="bindDatePickerChange" value="{{multiIndex}}" range="{{multiArray}}">
+<template is="restaruant-list" data="{{res}}">
+</template>
+</picker>
+</view>
+</block>
+
+<button class="weui-btn" type='default' catchtap="refreshRestaruants">不满意？换一换</button>
+<button class="weui-btn" type='primary' disabled="{{!picked}}" bindtap="postOrder">确认
+</button>
+</view>

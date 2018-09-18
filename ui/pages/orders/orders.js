@@ -11,7 +11,7 @@ Page({
   },
   
   refreshMatching: function() {
-
+    wx.navigateTo({url:"../restaruant-list/restaruant-list"})
   },
   confirmMatching: function() {
 

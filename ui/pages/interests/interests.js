@@ -19,7 +19,7 @@ Page({
   //事件处理函数
   toNextPage: function() {
     wx.navigateTo({
-      url: '../orders/orders'
+      url: '../restaruants-list/restaruants-list'
     })
   },
   /**
