@@ -31,6 +31,32 @@ Page({
     wx.navigateTo({
       url: '../restaruants-list/restaruants-list'
     })
+    
+    var that = this
+    var flavorList = that.data.textFields
+    app.globalData.userInfo.flavorList = []
+    for (var i=0; i<=flavorList.length; i++) {
+      if (flavorList[i].active) {
+        app.globalData.userInfo.flavorList.push(flavorList[i])
+      }
+    }
+
+    wx.request({
+      url: 'http://10.86.172.251:8080//lu//luckyhit/api/match',
+      data: {
+        userInfo: app.globalData.userInfo
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (response) {
+        app.globalData.userInfo.restaurantInfoList = response.data.restaurantInfoList
+      },
+      fail: function (error) {
+        window.alert('Error')
+      }
+    })
   },
   setActive: function() {
 
@@ -41,35 +67,35 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-        url: 'http://10.86.172.251:8080/luckyhit/api/userinfo/login',
-        data: {
-          nickName: app.globalData.userInfo.nickName
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/json'
-        },
-        success: function (response) {
-          app.globalData.userInfo.id = response.data.userInfo.id
-          app.globalData.userInfo.flavorList = response.data.userInfo.flavorList
-          var userFlavorLsit = app.globalData.userInfo.flavorList
-          var flavorList = that.data.textFields
-          for (var i=0; i<=flavorList.length; i++) {
-            if (userFlavorLsit) {
-              var aStr = userFlavorLsit.toString()
-              if (aStr.indexOf(flavorList[i]) > -1) {
-                flavorList[i].active = true
-              }
+      url: 'http://10.86.172.251:8080/luckyhit/api/userinfo/login',
+      data: {
+        nickName: app.globalData.userInfo.nickName
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (response) {
+        app.globalData.userInfo.id = response.data.userInfo.id
+        app.globalData.userInfo.flavorList = response.data.userInfo.flavorList
+        var userFlavorLsit = app.globalData.userInfo.flavorList
+        var flavorList = that.data.textFields
+        for (var i=0; i<=flavorList.length; i++) {
+          if (userFlavorLsit) {
+            var aStr = userFlavorLsit.toString()
+            if (aStr.indexOf(flavorList[i]) > -1) {
+              flavorList[i].active = true
             }
           }
-          that.setData({
-            textFields: flavorList
-          })
-        },
-        fail: function (error) {
-          alert('Error')
         }
-      })
+        that.setData({
+          textFields: flavorList
+        })
+      },
+      fail: function (error) {
+        window.alert('Error')
+      }
+    })
   },
 
   /**
