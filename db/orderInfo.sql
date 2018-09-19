@@ -6,12 +6,13 @@ END IF;
 
 CREATE TABLE order_info (
   id SERIAL,
-  first_user_id VARCHAR NOT NULL,
-  second_user_id VARCHAR NOT NULL,
-  restaurant_id VARCHAR NOT NULL,
-  dining_begin_time timestamp without time zone NOT NULL,
-  dining_end_time timestamp without time zone NOT NULL,
-  last_update_time timestamp without time zone NOT NULL,
+  firstuserid VARCHAR NOT NULL,
+  seconduserid VARCHAR NULL,
+  restaurantid VARCHAR NOT NULL,
+  diningbegintime timestamp without time zone NOT NULL,
+  diningendtime timestamp without time zone NOT NULL,
+  status SMALLINT NOT NULL,
+  lastupdatetime timestamp without time zone NOT NULL,
   CONSTRAINT order_info_pkey PRIMARY KEY (id));
 
 END

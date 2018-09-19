@@ -7,7 +7,7 @@ END IF;
 CREATE TABLE flavor_info (
   id SERIAL,
   name VARCHAR(256) NOT NULL,
-  last_update_time timestamp without time zone NOT NULL,
+  lastupdatetime timestamp without time zone NOT NULL,
   CONSTRAINT flavor_info_pkey PRIMARY KEY (id));
 
 END

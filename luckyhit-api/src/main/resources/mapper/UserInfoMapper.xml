@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.luckyhit.mapper.UserInfoMapper" >
     <sql id="BaseColumnList" >
-        id, name, flavor_list, last_login_time
+        id, name, flavorlist, status, lastlogintime
     </sql>
     <select id="selectByPrimaryKey" resultType="com.luckyhit.entity.UserInfoEntity" parameterType="java.lang.String" >
         select
@@ -20,15 +20,17 @@
         where id = #{id,jdbcType=VARCHAR}
     </delete>
     <insert id="insert" parameterType="com.luckyhit.entity.UserInfoEntity">
-        insert into user_info(id, name, flavor_list, last_login_time)
+        insert into user_info(id, name, flavorlist, status, lastlogintime)
         values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
-        #{flavorList,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP})
+        #{flavorList,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT},
+        #{lastLoginTime,jdbcType=TIMESTAMP})
     </insert>
     <update id="updateByPrimaryKey" parameterType="com.luckyhit.entity.UserInfoEntity" >
         update user_info set
         name = #{name,jdbcType=VARCHAR},
-        flavor_list = #{flavorList,jdbcType=VARCHAR},
-        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
+        flavorlist = #{flavorList,jdbcType=VARCHAR},
+        status = #{status,jdbcType=SMALLINT},
+        lastlogintime = #{lastLoginTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=VARCHAR}
     </update>
 </mapper>

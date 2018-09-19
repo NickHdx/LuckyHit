@@ -1,13 +1,15 @@
 package com.luckyhit.mapper;
 
 import com.luckyhit.domain.OrderInfo;
+import com.luckyhit.entity.OrderInfoEntity;
 
 import java.util.List;
 
 public interface OrderInfoMapper {
-    OrderInfo selectByPrimaryKey(Integer id);
-    List<OrderInfo> selectList();
+    OrderInfoEntity selectByPrimaryKey(Integer id);
+    List<OrderInfoEntity> selectList();
+    List<OrderInfoEntity> selectByFirstUserId(String firstUserId);
     int deleteByPrimaryKey(Integer id);
-    int insert(OrderInfo orderInfo);
-    int updateByPrimaryKey(OrderInfo orderInfo);
+    int insert(OrderInfoEntity orderInfoEntity);
+    int updateByPrimaryKey(OrderInfoEntity orderInfoEntity);
 }

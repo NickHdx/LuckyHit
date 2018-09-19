@@ -3,12 +3,10 @@ package com.luckyhit.domain;
 import java.util.Date;
 import java.util.List;
 
-public class RestaurantInfo {
+public class FlavorMap {
     private Integer id;
-    private String name;
-    private String address;
+    private String userId;
     private List<Integer> flavorList;
-    private String image;
     private Date lastUpdateTime;
 
     public Integer getId() {
@@ -19,20 +17,12 @@ public class RestaurantInfo {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public List<Integer> getFlavorList() {
@@ -41,14 +31,6 @@ public class RestaurantInfo {
 
     public void setFlavorList(List<Integer> flavorList) {
         this.flavorList = flavorList;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public Date getLastUpdateTime() {
@@ -61,12 +43,10 @@ public class RestaurantInfo {
 
     @Override
     public String toString() {
-        return "RestaurantInfo{" +
+        return "FlavorMap{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
+                ", userId='" + userId + '\'' +
                 ", flavorList=" + flavorList +
-                ", image='" + image + '\'' +
                 ", lastUpdateTime=" + lastUpdateTime +
                 '}';
     }

@@ -2,12 +2,10 @@ package com.luckyhit.entity;
 
 import java.util.Date;
 
-public class RestaurantInfoEntity {
+public class FlavorMapEntity {
     private Integer id;
-    private String name;
-    private String address;
+    private String userId;
     private String flavorList;
-    private String image;
     private Date lastUpdateTime;
 
     public Integer getId() {
@@ -18,20 +16,12 @@ public class RestaurantInfoEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getFlavorList() {
@@ -40,14 +30,6 @@ public class RestaurantInfoEntity {
 
     public void setFlavorList(String flavorList) {
         this.flavorList = flavorList;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public Date getLastUpdateTime() {
@@ -60,12 +42,10 @@ public class RestaurantInfoEntity {
 
     @Override
     public String toString() {
-        return "RestaurantInfoEntity{" +
+        return "FlavorMapEntity{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
+                ", userId='" + userId + '\'' +
                 ", flavorList='" + flavorList + '\'' +
-                ", image='" + image + '\'' +
                 ", lastUpdateTime=" + lastUpdateTime +
                 '}';
     }

@@ -6,6 +6,7 @@ public class UserInfoEntity {
     private String id;
     private String name;
     private String flavorList;
+    private Short status;
     private Date lastLoginTime;
 
     public String getId() {
@@ -40,12 +41,21 @@ public class UserInfoEntity {
         this.lastLoginTime = lastLoginTime;
     }
 
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "UserInfoEntity{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", flavorList='" + flavorList + '\'' +
+                ", status=" + status +
                 ", lastLoginTime=" + lastLoginTime +
                 '}';
     }

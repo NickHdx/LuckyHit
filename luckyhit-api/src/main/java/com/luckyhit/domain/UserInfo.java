@@ -7,6 +7,7 @@ public class UserInfo {
     private String id;
     private String name;
     private List<Integer> flavorList;
+    private UserStatus status;
     private Date lastLoginTime;
 
     public String getId() {
@@ -41,12 +42,21 @@ public class UserInfo {
         this.lastLoginTime = lastLoginTime;
     }
 
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "UserInfoController{" +
+        return "UserInfo{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", flavorList=" + flavorList +
+                ", status=" + status +
                 ", lastLoginTime=" + lastLoginTime +
                 '}';
     }

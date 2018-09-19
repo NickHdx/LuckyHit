@@ -1,15 +1,15 @@
-package com.luckyhit.domain;
+package com.luckyhit.entity;
 
 import java.util.Date;
 
-public class OrderInfo {
+public class OrderInfoEntity {
     private Integer id;
     private String firstUserId;
     private String secondUserId;
     private Integer restaurantId;
     private Date diningBeginTime;
     private Date diningEndTime;
-    private OrderStatus status;
+    private Short status;
     private Date lastUpdateTime;
 
     public Integer getId() {
@@ -60,6 +60,14 @@ public class OrderInfo {
         this.diningEndTime = diningEndTime;
     }
 
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
+
     public Date getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -68,13 +76,9 @@ public class OrderInfo {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
-        return "OrderInfo{" +
+        return "OrderInfoEntity{" +
                 "id=" + id +
                 ", firstUserId='" + firstUserId + '\'' +
                 ", secondUserId='" + secondUserId + '\'' +
@@ -84,9 +88,5 @@ public class OrderInfo {
                 ", status=" + status +
                 ", lastUpdateTime=" + lastUpdateTime +
                 '}';
-    }
-
-    public OrderStatus getStatus() {
-        return status;
     }
 }

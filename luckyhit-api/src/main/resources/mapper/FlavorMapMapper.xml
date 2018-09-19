@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.luckyhit.mapper.FlavorMapMapper" >
+    <sql id="BaseColumnList" >
+        id, userid, flavorlist, lastupdatetime
+    </sql>
+    <select id="selectByPrimaryKey" resultType="com.luckyhit.entity.FlavorMapEntity" parameterType="java.lang.Integer" >
+        select
+        <include refid="BaseColumnList" />
+        from flavor_map
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectListByUserId" resultType="com.luckyhit.entity.FlavorMapEntity" parameterType="java.lang.String" >
+        select
+        <include refid="BaseColumnList" />
+        from flavor_map
+        where userid = #{userId,jdbcType=INTEGER}
+    </select>
+    <select id="selectList" resultType="com.luckyhit.entity.FlavorMapEntity">
+        select
+        <include refid="BaseColumnList" />
+        from flavor_map
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from flavor_map
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.luckyhit.entity.FlavorMapEntity">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            SELECT currval('flavor_map_id_seq')
+        </selectKey>
+        insert into flavor_map(userid, flavorlist, lastupdatetime)
+        values (#{userId,jdbcType=VARCHAR}, #{flavorList,jdbcType=VARCHAR},
+        #{lastUpdateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.luckyhit.entity.FlavorMapEntity" >
+        update flavor_map set
+        userid = #{userId,jdbcType=VARCHAR},
+        flavorlist = #{flavorList,jdbcType=VARCHAR},
+        lastupdatetime = #{lastUpdateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

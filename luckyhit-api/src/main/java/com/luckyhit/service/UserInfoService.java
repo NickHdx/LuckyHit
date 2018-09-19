@@ -1,6 +1,7 @@
 package com.luckyhit.service;
 
 import com.luckyhit.domain.UserInfo;
+import com.luckyhit.domain.UserStatus;
 import com.luckyhit.entity.UserInfoEntity;
 import com.luckyhit.mapper.UserInfoMapper;
 import com.luckyhit.utils.FastJsonUtils;
@@ -44,16 +45,24 @@ public class UserInfoService {
     }
 
     private UserInfoEntity translateModel2Entity(UserInfo userInfo) {
+        if (userInfo == null) {
+            return null;
+        }
         UserInfoEntity userInfoEntity = new UserInfoEntity();
         BeanUtils.copyProperties(userInfo, userInfoEntity);
         userInfoEntity.setFlavorList(FastJsonUtils.pubOrPubsToJson(userInfo.getFlavorList()));
+        userInfoEntity.setStatus(userInfo.getStatus().getValue());
         return userInfoEntity;
     }
 
     private UserInfo translateEntity2Model(UserInfoEntity userInfoEntity) {
+        if (userInfoEntity == null) {
+            return null;
+        }
         UserInfo userInfo = new UserInfo();
         BeanUtils.copyProperties(userInfoEntity, userInfo);
         userInfo.setFlavorList(FastJsonUtils.jsonToPubs(userInfoEntity.getFlavorList(), Integer.class));
+        userInfo.setStatus(UserStatus.getEnum(userInfoEntity.getStatus()));
         return userInfo;
     }
 }
