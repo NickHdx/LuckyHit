@@ -1,0 +1,4 @@
+/* pages/restaruant-list/restaruant-list.wxss */
+.is_checked{
+    border:1px solid blue;
+}

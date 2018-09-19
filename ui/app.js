@@ -1,5 +1,7 @@
 //app.js
+const rest = require('./utils/webService.js')
 App({
+  webService:rest,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
