@@ -1,19 +1,29 @@
 // pages/interests.js
 const app = getApp()
 
+function isContained(a, b){
+  if(!(a instanceof Array) || !(b instanceof Array)) return false
+  if(a.length < b.length) return false
+  var aStr = a.toString()
+  for(var i = 0, len = b.length; i < len; i++){
+     if(aStr.indexOf(b[i]) == -1) return false
+  }
+  return true
+}
+
 Page({
   data: {
     textFields: /* app.globalData.userInfo.interests */[
-      { name: 'mala', value: '麻辣'},
-      { name: 'xianxiang', value: '咸鲜'},
-      { name: 'suanla', value: '酸辣'},
-      { name: 'suanxiang', value: '蒜香'},
-      { name: 'tiansuan', value: '甜酸'},
-      { name: 'congxiang', value: '葱香'},
-      { name: 'curry', value: '咖喱'},
-      { name: 'xiantian', value: '咸甜'},
-      { name: 'yuxiang', value: '鱼香' },
-      { name: 'luxiang', value: '卤香' }
+      { flavorId: '1', name: '麻辣', active: true},
+      { flavorId: '2', name: '咸鲜', active: false},
+      { flavorId: '3', name: '酸辣', active: false},
+      { flavorId: '4', name: '蒜香', active: true},
+      { flavorId: '5', name: '甜酸', active: false},
+      { flavorId: '6', name: '葱香', active: false},
+      { flavorId: '7', name: '咖喱', active: false},
+      { flavorId: '8', name: '咸甜', active: false},
+      { flavorId: '9', name: '鱼香' , active: false},
+      { flavorId: '10', name: '卤香' , active: false}
     ]
   },
   //事件处理函数
@@ -22,11 +32,44 @@ Page({
       url: '../orders/orders'
     })
   },
+  setActive: function() {
+
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    var that = this
+    wx.request({
+        url: 'http://10.86.172.251:8080/luckyhit/api/userinfo/login',
+        data: {
+          nickName: app.globalData.userInfo.nickName
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (response) {
+          app.globalData.userInfo.id = response.data.userInfo.id
+          app.globalData.userInfo.flavorList = response.data.userInfo.flavorList
+          var userFlavorLsit = app.globalData.userInfo.flavorList
+          var flavorList = that.data.textFields
+          for (var i=0; i<=flavorList.length; i++) {
+            if (userFlavorLsit) {
+              var aStr = userFlavorLsit.toString()
+              if (aStr.indexOf(flavorList[i]) > -1) {
+                flavorList[i].active = true
+              }
+            }
+          }
+          that.setData({
+            textFields: flavorList
+          })
+        },
+        fail: function (error) {
+          alert('Error')
+        }
+      })
   },
 
   /**

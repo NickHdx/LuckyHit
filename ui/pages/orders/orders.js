@@ -1,5 +1,6 @@
 // pages/orders/orders.js
-var base64 = require("../../static/images/base64");
+const app = getApp()
+var base64 = require("../../static/images/base64")
 
 Page({
 
@@ -23,7 +24,12 @@ Page({
   onLoad: function (options) {
     this.setData({
       icon20: base64.icon20,
-      icon60: base64.icon60
+      icon60: base64.icon60,
+      food60: '../../static/images/restaurants/food.jpg',
+      currentUserInfo: app.globalData.userInfo,
+      matchedUserInfo: {
+        avatarUrl: base64.icon60
+      }
     });
   },
 

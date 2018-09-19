@@ -12,27 +12,27 @@
       </view>
     </view> -->
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder activeItem">{{textFields[0].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{textFields[0].active ? activeItem : ''}}" bindtap="setActive">{{textFields[0].name}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[1].value}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[2].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[1].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[2].name}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder activeItem">{{textFields[3].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[3].name}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[4].value}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[5].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[4].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[5].name}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[6].value}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[7].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[6].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[7].name}}</view></view>
     </view>
     <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[8].value}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder">{{textFields[9].value}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[8].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[9].name}}</view></view>
     </view>
-    <button class="weui-btn" type="primary" bindtap="toNextPage">Next</button>
+    <button class="weui-btn" type="primary" bindtap="toNextPage">下一步</button>
   </view>
 </view>
