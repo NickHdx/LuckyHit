@@ -5,34 +5,31 @@
     <view class="page__desc">请挑选喜好</view>
   </view>
   <view class="page__bd page__bd_spacing">
-    <!-- <view wx:for = "{{textFields}}">
-      <view class="weui-flex">
-          <view class="weui-flex__item"><view class="placeholder activeItem">{{item.index}}</view></view>
-          
-      </view>
+    <view wx:for = "{{textFields}}">
+        <view class="placeholder {{item.active ? 'activeItem' : ''}}" bindtap="setActive" data-index="{{index}}">{{item.name}}</view>
+    </view>
+    <!-- <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{key ? 'activeItem' : ''}}" bindtap="setActive" data-active="{{textFields[0].active}}">{{textFields[0].name}}</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{textFields[1].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[1].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{textFields[2].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[2].name}}</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{textFields[3].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[3].name}}</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{textFields[4].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[4].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{textFields[5].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[5].name}}</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{textFields[6].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[6].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{textFields[7].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[7].name}}</view></view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item"><view class="placeholder {{textFields[8].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[8].name}}</view></view>
+        <view class="weui-flex__item"><view class="placeholder {{textFields[9].active ? 'activeItem' : ''}}" bindtap="setActive">{{textFields[9].name}}</view></view>
     </view> -->
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{textFields[0].active ? activeItem : ''}}" bindtap="setActive">{{textFields[0].name}}</view></view>
-    </view>
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[1].name}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[2].name}}</view></view>
-    </view>
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[3].name}}</view></view>
-    </view>
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[4].name}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[5].name}}</view></view>
-    </view>
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[6].name}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[7].name}}</view></view>
-    </view>
-    <view class="weui-flex">
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[8].name}}</view></view>
-        <view class="weui-flex__item"><view class="placeholder {{active ? activeItem : ''}}" bindtap="setActive">{{textFields[9].name}}</view></view>
-    </view>
     <button class="weui-btn" type="primary" bindtap="toNextPage">下一步</button>
   </view>
 </view>

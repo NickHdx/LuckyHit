@@ -28,21 +28,17 @@ Page({
   },
   //事件处理函数
   toNextPage: function() {
-    wx.navigateTo({
-      url: '../restaruants-list/restaruants-list'
-    })
-    
     var that = this
     var flavorList = that.data.textFields
     app.globalData.userInfo.flavorList = []
-    for (var i=0; i<=flavorList.length; i++) {
+    for (var i=0; i<flavorList.length; i++) {
       if (flavorList[i].active) {
         app.globalData.userInfo.flavorList.push(flavorList[i])
       }
     }
 
     wx.request({
-      url: 'http://10.86.172.251:8080//lu//luckyhit/api/match',
+      url: 'http://10.86.172.251:8080/luckyhit/api/match',
       data: {
         userInfo: app.globalData.userInfo
       },
@@ -52,14 +48,29 @@ Page({
       },
       success: function (response) {
         app.globalData.userInfo.restaurantInfoList = response.data.restaurantInfoList
+        wx.navigateTo({
+          url: '../restaruant-list/restaruant-list'
+        })
       },
       fail: function (error) {
-        window.alert('Error')
+        console.log('Error')
       }
     })
   },
-  setActive: function() {
-
+  setActive: function(e) {
+    this.setData({
+      key: e.target.dataset.index
+    })
+    var key = this.data.key
+    var flavorList = this.data.textFields
+    if (flavorList[key].active) {
+      flavorList[key].active = false
+    } else {
+      flavorList[key].active = true
+    }
+    this.setData({
+      textFields: flavorList
+    })
   },
   /**
    * Lifecycle function--Called when page load
@@ -93,7 +104,7 @@ Page({
         })
       },
       fail: function (error) {
-        window.alert('Error')
+        console.log('Error')
       }
     })
   },
