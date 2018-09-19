@@ -25,7 +25,7 @@ Page({
     this.setData({
       icon20: base64.icon20,
       icon60: base64.icon60,
-      food60: '../../static/images/restaurants/food.jpg',
+      food60: '../../static/images/restaurants/res.jpg',
       currentUserInfo: app.globalData.userInfo,
       matchedUserInfo: {
         avatarUrl: base64.icon60
